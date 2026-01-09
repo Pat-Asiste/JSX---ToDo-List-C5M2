@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './TodoList.css';
 
 const TodoList = () => {
-  
 
   return (
     <>
