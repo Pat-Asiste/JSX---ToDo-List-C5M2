@@ -2,11 +2,20 @@ import React, { useState } from 'react';
 import './TodoList.css';
 
 const TodoList = () => {
-    //almacén de datos CREADO-------------------------------
-  const [todos, setTodos] = useState([]);
-  const [headingInput, setHeadingInput] = useState("");
+  //DB2 CREADO-------------------------------
+  const [todos, setTodos] = useState([]);//Memoria ROM
+  const [headingInput, setHeadingInput] = useState("");//Memoria enTiempoReal
   const [listInputs, setListInputs] = useState({});
-  //------------------------------------------------------
+
+  //FUNCIONALIDAD DE AGREGAR ITEMS
+  const handleAddTodo = () => {
+    if (headingInput.trim() !== "") {
+      setTodos([...todos, { heading: headingInput, lists: [] }]);//Botón "add item as obj{}"
+      setHeadingInput("");//reset <input>
+    }
+  };
+
+
   return (
     <>
       <div className="todo-container">
