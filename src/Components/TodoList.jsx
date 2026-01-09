@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import './TodoList.css';
 
 const TodoList = () => {
-
+    //almacén de datos CREADO-------------------------------
+  const [todos, setTodos] = useState([]);
+  const [headingInput, setHeadingInput] = useState("");
+  const [listInputs, setListInputs] = useState({});
+  //------------------------------------------------------
   return (
     <>
       <div className="todo-container">
