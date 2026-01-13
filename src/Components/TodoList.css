@@ -50,11 +50,12 @@
     outline: none;
 }
 
-.heading_todo {
+.heading_todo, .EDITED_heading_todo {
     display: flex;
     gap: 20px;
     align-items: center;
     justify-content: center;
+    background-color: orange;
 }
 
 .heading_todo h3 {
