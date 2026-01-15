@@ -9,7 +9,7 @@ PASOS PARA CREAR UNA APP REACT
 // el array[] "todos" contiene objs{} y cada uno es un item
 // el array[] funciona con index.
 // FORMATO: lista.map(item, index)
-// WARNING: "handleListInputChange" -- De no declararse bota ERROR<input>
+// WARNING: "handleListInputChange" -- De no declararse f(x) bota ERROR<input>
 
 import React, { useState } from 'react';
 import './TodoList.css';
@@ -41,6 +41,13 @@ const TodoList = () => {
 
   const handleListInputChange = (index, value) => { //WARNING: De no declararse bota ERROR<input>
     setListInputs({ ...listInputs, [index]: value });
+  }
+
+  //FUNCIONALIDAD DE ELIMINAR ITEMS
+  const handleDeleteTodo = (index) => {
+    const newTodos = [...todos]; //var temporal
+    newTodos.splice(index,1); //elimina el item
+    setTodos(newTodos);
   }
 
   // UI ---------------------------------------
@@ -83,7 +90,7 @@ const TodoList = () => {
               </ul>
 
               <div className="EDITED_heading_todo">
-                <input type="text" className="list-input" placeholder="Agregar Lista" value={listInputs[index] || ""} onChange={(e) => handleListInputChange(index, e.target.value)} />{/* ERROR(2) OR||  /  funcion no definida ---------------------------*/}
+                <input type="text" className="list-input" placeholder="Agregar Lista" value={listInputs[index] || ""} onChange={(e) => handleListInputChange(index, e.target.value)} />{/* WARNING(2): OR||  /  funcion no definida ---------------------------*/}
                 <button className="add-list-button" onClick={() => handleAddList(index)}>Agregar Lista</button>
               </div>
             </div>

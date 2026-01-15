@@ -1,4 +1,8 @@
 /* TodoList.css */
+body {
+    --testing-color: orange;
+}
+/* -------------------------------------------- */
 
 .todo-container {
     max-width: 600px;
@@ -15,12 +19,14 @@
     color: #333;
     margin-bottom: 20px;
 }
-.input-container{
+
+.input-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
 .todo_main {
     margin: 60px;
     max-width: 100%;
@@ -32,7 +38,8 @@
 }
 
 .todo-card {
-    width: 300px; /* Adjust the width of the cards as needed */
+    width: 300px;
+    /* Adjust the width of the cards as needed */
     padding: 20px;
     background-color: white;
     border-radius: 8px;
@@ -50,12 +57,13 @@
     outline: none;
 }
 
-.heading_todo, .EDITED_heading_todo {
+.heading_todo,
+.EDITED_heading_todo {
     display: flex;
     gap: 20px;
     align-items: center;
     justify-content: center;
-    background-color: orange;
+    background-color: var(--testing-color);
 }
 
 .heading_todo h3 {
@@ -112,9 +120,9 @@
     transition: background-color 0.3s ease;
     margin-left: 25px;
 }
+
 .todo_inside_list {
     display: flex;
     gap: 140px;
     margin: 10px;
 }
-
